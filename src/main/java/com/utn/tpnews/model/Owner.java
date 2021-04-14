@@ -16,7 +16,7 @@ import java.util.List;
 public class Owner {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @NotNull
@@ -30,7 +30,7 @@ public class Owner {
     private String email;
 
     @OneToMany(fetch = FetchType.EAGER)
-    @JoinColumn(name = "typeNew")
+    @JoinColumn(name = "new_id")
     private List<New> news;
 
 }
